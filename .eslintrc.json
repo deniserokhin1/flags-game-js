@@ -13,6 +13,6 @@
   "rules": {
     "prettier/prettier": "error",
     "camelcase": ["error"],
-    "eqeqeq": ["warn", "always"]
+    "eqeqeq": ["error", "always"]
   }
 }

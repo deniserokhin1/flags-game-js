@@ -11,7 +11,7 @@
     "format": "prettier --write ./src/",
     "lint:ts": "eslint ./src/**/*.ts",
     "lint:css": "stylelint ./src/**/*.css",
-    "lint": "npm run lint:ts",
+    "lint": "npm run format",
     "deploy": "gh-pages -d dist"
   },
   "keywords": [],
