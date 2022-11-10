@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
   <title>Флаги стран</title>
 </head>
 
@@ -21,17 +21,16 @@
   </div>
   <div class="controls-container">
     <p class="result" id="result"></p>
-    <button class="btn-start" id="start">Начать игру</button>
+    <button type="button" class="btn-start btn btn-light" id="start">Начать игру</button>
   </div>
   <div class="input-wrapper">
     <div class="input-container">
       <label for="customRange3" class="form-label">Количество флагов</label>
-      <input type="range" class="form-range" min="4" max="24" step="4" id="customRange3" value="4">
+      <input type="range" class="form-range" min="4" max="24" step="4" id="customRange3" value="4" />
       <div class="count-flags">4</div>
       <button type="button" class="btn btn-primary btn-game">Поехали</button>
     </div>
   </div>
-
 </body>
 
 </html>

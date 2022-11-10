@@ -23,7 +23,7 @@ async function getCountry(data: any, code: string) {
   data.innerHTML = LOADER
   let response = await fetch(`https://restcountries.com/v3.1/alpha/${code}`)
   let country = await response.json()
-  let flag = country[0].flags.svg
+  let flag = country[0].flags.png
   data.innerHTML = `<img src="${flag}" id="${code}" data-url="${flag}">`
 }
 
@@ -51,6 +51,8 @@ const randomValueGenerator = () => {
 const stopGame = () => {
   controls.classList.remove('hide')
   startButton.classList.remove('hide')
+  container.classList.add('hide')
+  let countFlags = 4
 }
 
 function dragStart(e: any) {
@@ -172,6 +174,7 @@ startButton.addEventListener('click', async () => {
 
   controls.classList.add('hide')
   startButton.classList.add('hide')
+  inPutWrapper.classList.remove('hide')
 })
 
 const handleInput = (e: any) => {

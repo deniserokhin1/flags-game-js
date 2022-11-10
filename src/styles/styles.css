@@ -65,8 +65,7 @@ body {
   width: 10em;
   height: 9em;
   cursor: pointer;
-  -webkit-filter: drop-shadow(0 0.3em 0.9em rgba(0, 0, 0, 0.25));
-          filter: drop-shadow(0 0.3em 0.9em rgba(0, 0, 0, 0.25));
+  overflow: visible;
 }
 
 .flag-div {
@@ -75,6 +74,8 @@ body {
 
 img {
   width: 100%;
+  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
 }
 
 .countries {
