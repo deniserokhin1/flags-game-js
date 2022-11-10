@@ -2,7 +2,7 @@ import '@/styles/styles'
 import { LOADER } from './assets'
 import { dataCountries } from './by-code'
 
-let countFlags = 0
+let countFlags = 4
 let countAnswers = 0
 let draggableObjects
 let dropPoints
@@ -13,12 +13,16 @@ const dragContainer = document.querySelector(
   '.draggable-objects'
 ) as HTMLElement
 const dropContainer = document.querySelector('.drop-points') as HTMLElement
+const rangeInput = document.querySelector('.form-range') as HTMLElement
+const startValueFlags = document.querySelector('.count-flags') as HTMLElement
+const startGame = document.querySelector('.btn-game') as HTMLElement
+const inPutWrapper = document.querySelector('.input-wrapper') as HTMLElement
+const container = document.querySelector('.container-div') as HTMLElement
 
 async function getCountry(data: any, code: string) {
   data.innerHTML = LOADER
   let response = await fetch(`https://restcountries.com/v3.1/alpha/${code}`)
   let country = await response.json()
-  console.log(country)
   let flag = country[0].flags.svg
   data.innerHTML = `<img src="${flag}" id="${code}" data-url="${flag}">`
 }
@@ -140,7 +144,6 @@ const creator = () => {
       i -= 1
     }
   }
-  console.log(randomData)
   for (let i of randomData) {
     const flagDiv = document.createElement('div')
     flagDiv.classList.add('draggable-image')
@@ -155,6 +158,7 @@ const creator = () => {
   randomData = randomData.sort(() => 0.5 - Math.random())
   for (let i of randomData) {
     const countryDiv = document.createElement('div')
+    countryDiv.classList.add('flag-div')
     countryDiv.innerHTML = `<div class='countries' data-id='${i.value}'>
     ${i.text}
     </div>
@@ -165,15 +169,21 @@ const creator = () => {
 
 startButton.addEventListener('click', async () => {
   currentElement = {} as HTMLElement
-  countFlags = Number(prompt('Сколько флагов показать за один раз?'))
-
-  if (!countFlags) {
-    return
-  }
 
   controls.classList.add('hide')
   startButton.classList.add('hide')
+})
 
+const handleInput = (e: any) => {
+  startValueFlags.textContent = e.target.value
+  countFlags = e.target.value
+}
+
+rangeInput.addEventListener('input', handleInput)
+
+const handleStartGame = async () => {
+  inPutWrapper.classList.add('hide')
+  container.classList.remove('hide')
   await creator()
   countAnswers = 0
   dropPoints = document.querySelectorAll('.countries')
@@ -190,4 +200,6 @@ startButton.addEventListener('click', async () => {
     element.addEventListener('dragover', dragOver)
     element.addEventListener('drop', drop)
   })
-})
+}
+
+startGame.addEventListener('click', handleStartGame)

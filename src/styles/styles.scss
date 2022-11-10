@@ -15,21 +15,23 @@ body {
   background: $color-bg;
 }
 
-.container {
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.container-div {
   background: $color-light;
-  max-width: 90%;
-  padding: 3em 0.5em;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
+  width: 90%;
+  margin: 20px 0;
+  padding: 2em 0.5em 1.5em;
+  overflow-y: scroll;
   border-radius: 0.8rem;
 }
 
 .title {
   text-align: center;
-  width: 60%;
-  margin: 0 auto 2em auto;
+  margin: 0 auto;
   font-size: 1.5em;
   letter-spacing: 0.03em;
   line-height: 1.8em;
@@ -40,33 +42,36 @@ body {
 .drop-points {
   display: flex;
   justify-content: space-around;
-  padding: 2em;
+  flex-wrap: wrap;
+  padding: 1em 2em;
 }
 
 .draggable-image {
   display: flex;
   justify-content: center;
-  margin-right: 10px;
+  margin: 0 5px;
+  overflow: hidden;
   align-items: center;
   width: 10em;
-  height: 8em;
+  height: 9em;
   cursor: pointer;
+  filter: drop-shadow(0 0.3em 0.9em rgba(0, 0, 0, 0.25));
 }
 
-.draggable-image:not(:last-child) {
-  margin-right: 15px;
+.flag-div {
+  margin: 10px 5px;
 }
 
 img {
   width: 100%;
-  filter: drop-shadow(0 0.3em 0.9em rgba(0, 0, 0, 0.25));
 }
 
 .countries {
   width: 10em;
-  height: 8em;
-  display: grid;
-  place-items: center;
+  height: 6.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   border: 0.15em dashed $color-bg;
   border-radius: 0.8em;
@@ -106,10 +111,6 @@ img {
   margin-bottom: 1em;
 }
 
-.hide {
-  display: none;
-}
-
 .spinner_V8m1 {
   transform-origin: center;
   animation: spinner_zKoa 2s linear infinite;
@@ -142,4 +143,36 @@ img {
     stroke-dasharray: 42 150;
     stroke-dashoffset: -59;
   }
+}
+
+.input-container {
+  margin: 0 auto;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  padding: 20px 40px;
+  border-radius: 15px;
+  background: $color-light;
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-label {
+  font-size: 1.5em;
+}
+
+.count-flags {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+
+.hide {
+  display: none;
 }
