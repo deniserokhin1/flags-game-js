@@ -1,4 +1,4 @@
-declare module namespace {
+export declare module namespace {
   export interface Aym {
     official: string
     common: string
@@ -278,4 +278,10 @@ declare module namespace {
     capitalInfo: CapitalInfo
     postalCode: PostalCode
   }
+}
+
+export interface ICountry {
+  nameCountry: string
+  flagUrl: string
+  code: string
 }

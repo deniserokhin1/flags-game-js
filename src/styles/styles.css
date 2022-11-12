@@ -1,4 +1,5 @@
 @import url(/Volumes/LaCie_1/FD/my_project/js/flags-game/node_modules/normalize.css/normalize.css);
+@import url(/Volumes/LaCie_1/FD/my_project/js/flags-game/src/styles/font-awesome/css/font-awesome.min.css);
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -18,15 +19,62 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn-game-over {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  color: #fff;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-game-over:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.wrapper100vh {
+  height: 100vh;
+}
+
+.container__btn-again {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 15px;
 }
 
 .container-div {
   background: #fff;
-  width: 90%;
+  max-width: 95%;
+  min-height: 500px;
   margin: 20px 0;
   padding: 2em 0.5em 1.5em;
-  overflow-y: scroll;
   border-radius: 0.8rem;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.container-div-win {
+  min-height: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .title {
@@ -58,29 +106,52 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0 5px;
-  overflow: hidden;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 10em;
   height: 9em;
-  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: grab;
   overflow: visible;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.draggable-image:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.draggable-image:active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .flag-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 10px 5px;
 }
 
 img {
   width: 100%;
-  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
-          box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.25);
 }
 
 .countries {
   width: 10em;
-  height: 6.7em;
+  height: 6em;
+  padding: 5px 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,12 +164,40 @@ img {
   text-align: center;
   border: 0.15em dashed #5372ef;
   border-radius: 0.8em;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.over {
+  background-color: rgba(16, 218, 215, 0.125);
+  width: 11em;
+  height: 6.7em;
+}
+
+.error {
+  background-color: rgba(218, 16, 16, 0.125);
 }
 
 .dropped {
-  padding: 0;
-  overflow: hidden;
-  background-color: #e5ffc8;
+  width: 10em;
+  height: 6.7em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: visible;
+  border: none;
+}
+
+.name-country {
+  max-width: 150px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .controls-container {
@@ -145,7 +244,7 @@ img {
           animation: spinner_zKoa 2s linear infinite;
   width: 64px;
   height: 64px;
-  stroke: #5372ef;
+  stroke: #fff;
 }
 
 .spinner_V8m1 circle {

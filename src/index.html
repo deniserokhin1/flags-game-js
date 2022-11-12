@@ -1,36 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <title>Флаги стран</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
-  <title>Флаги стран</title>
-</head>
-
-<body>
-  <div class="wrapper">
-    <div class="container-div hide">
-      <h3 class="title">Соотнеси флаги с названием стран</h3>
-      <div class="draggable-objects"></div>
-      <div class="drop-points"></div>
+  <body>
+    <i class="fa fa-2x fa-times btn-game-over hide" aria-hidden="true"></i>
+    <div class="wrapper">
+      <div class="container-div hide">
+        <h3 class="title">Перетащи флаг на страну</h3>
+        <div class="draggable-objects"></div>
+        <div class="drop-points"></div>
+        <div class="container__btn-again">
+          <button type="button" class="btn btn-primary btn-again hide">
+            Начать заново
+          </button>
+        </div>
+      </div>
+      <svg class="spinner_V8m1 hide" viewBox="0 0 24 24">
+        <g class="spinner_V8m1">
+          <circle cx="12" cy="12" r="9.5"></circle>
+        </g>
+      </svg>
     </div>
-  </div>
-  <div class="controls-container">
-    <p class="result" id="result"></p>
-    <button type="button" class="btn-start btn btn-light" id="start">Начать игру</button>
-  </div>
-  <div class="input-wrapper">
-    <div class="input-container">
-      <label for="customRange3" class="form-label">Количество флагов</label>
-      <input type="range" class="form-range" min="4" max="24" step="4" id="customRange3" value="4" />
-      <div class="count-flags">4</div>
-      <button type="button" class="btn btn-primary btn-game">Поехали</button>
+    <div class="controls-container">
+      <p class="result" id="result"></p>
+      <button type="button" class="btn-start btn btn-light" id="start">
+        Начать игру
+      </button>
     </div>
-  </div>
-</body>
-
+    <div class="input-wrapper">
+      <div class="input-container">
+        <label for="customRange3" class="form-label">Количество флагов</label>
+        <input
+          type="range"
+          class="form-range"
+          min="4"
+          max="24"
+          step="2"
+          id="customRange3"
+          value="4"
+        />
+        <div class="count-flags">4</div>
+        <button type="button" class="btn btn-primary btn-game">Поехали</button>
+      </div>
+    </div>
+  </body>
 </html>
