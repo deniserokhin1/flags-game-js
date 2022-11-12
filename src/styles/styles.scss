@@ -1,4 +1,5 @@
 @import '../../node_modules/normalize.css/normalize.css';
+@import './font-awesome/css/font-awesome.min.css';
 
 $color-bg: #5372ef;
 $color-light: #fff;
@@ -18,15 +19,46 @@ body {
 .wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.btn-game-over {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  color: $color-light;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-game-over:hover {
+  transform: scale(1.2);
+}
+
+.wrapper100vh {
+  height: 100vh;
+}
+
+.container__btn-again {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 
 .container-div {
   background: $color-light;
-  width: 90%;
+  max-width: 95%;
+  min-height: 500px;
   margin: 20px 0;
   padding: 2em 0.5em 1.5em;
-  overflow-y: scroll;
   border-radius: 0.8rem;
+  transition: all 0.6s ease-in-out;
+}
+
+.container-div-win {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .title {
@@ -50,39 +82,70 @@ body {
   display: flex;
   justify-content: center;
   margin: 0 5px;
-  overflow: hidden;
   align-items: center;
   width: 10em;
   height: 9em;
-  cursor: pointer;
-  // filter: drop-shadow(0 0.6em 0.9em rgba(0, 0, 0, 0.25));
+  cursor: grab;
   overflow: visible;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(1);
+  }
 }
 
 .flag-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 10px 5px;
 }
 
 img {
   width: 100%;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.25);
 }
 
 .countries {
   width: 10em;
-  height: 6.7em;
+  height: 6em;
+  padding: 5px 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   border: 0.15em dashed $color-bg;
   border-radius: 0.8em;
+  transition: all 0.2s ease-in-out;
+}
+
+.over {
+  background-color: rgba(16, 218, 215, 0.125);
+  width: 11em;
+  height: 6.7em;
+}
+
+.error {
+  background-color: rgba(218, 16, 16, 0.125);
 }
 
 .dropped {
-  padding: 0;
-  overflow: hidden;
-  background-color: #e5ffc8;
+  width: 10em;
+  height: 6.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  border: none;
+  // background-color: #e5ffc8;
+}
+
+.name-country {
+  max-width: 150px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .controls-container {
@@ -118,7 +181,7 @@ img {
   animation: spinner_zKoa 2s linear infinite;
   width: 64px;
   height: 64px;
-  stroke: $color-bg;
+  stroke: $color-light;
 }
 .spinner_V8m1 circle {
   stroke-linecap: round;
